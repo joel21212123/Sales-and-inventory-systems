@@ -1,0 +1,25 @@
+# NetBeans
+build/
+dist/
+nbproject/private/
+nbproject/Makefile-*.mk
+nbproject/Package-*.bash
+nbbuild/
+nbdist/
+.nb-gradle/
+
+# Compiled class files
+*.class
+
+# Log files
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# IDE
+.idea/
+*.iml
