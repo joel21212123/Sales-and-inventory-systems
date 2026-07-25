@@ -36,3 +36,60 @@ The database schema goes beyond basic CRUD tables:
 The full schema, including sample data, is in [`database/bodega_myc.sql`](./database/bodega_myc.sql).
 
 ## Project structure
+## Project structure
+
+```
+src/bodega_myc_/
+├── Vista/          → Swing UI forms (views)
+├── Ctrl/           → Controllers (business logic, event handling)
+├── Modelo/         → Data models (POJOs)
+└── ConexionMysql/  → Database connection and query classes (DAO layer)
+```
+## Getting started
+
+### Prerequisites
+- Java JDK 17+ (developed/tested on JDK 21 and 24)
+- MySQL Server (or XAMPP with MySQL enabled)
+- Apache NetBeans (recommended) or any IDE with Ant support
+
+### Setup
+
+1. Clone the repository
+```bash
+   git clone https://github.com/joel21212123/Sales-and-inventory-systems.git
+```
+
+2. Create the database by running the SQL script in `database/bodega_myc.sql` 
+   through phpMyAdmin, MySQL Workbench, or the MySQL CLI. This creates the 
+   database, tables, triggers, views, and sample data.
+
+3. Open the project in NetBeans (`File → Open Project`) and select the 
+   `bodega_myc_` folder.
+
+4. Check the database connection settings in 
+   `src/bodega_myc_/ConexionMysql/ConexionClass.java` and adjust the port/
+   credentials if your local MySQL setup differs from the defaults 
+   (`localhost:3306`, user `root`, no password).
+
+5. Run the project (`Run → Run Project` or F6).
+
+### Default login credentials (sample data)
+| Username | Password | Role |
+|---|---|---|
+| admin | admin123 | Administrator |
+| vendedor1 | vendedor123 | Salesperson |
+| almacen | almacen123 | Warehouse |
+
+## Screenshots
+
+_Coming soon_
+
+## Known limitations
+
+- Passwords are currently stored in plain text (planned improvement: bcrypt hashing)
+- No connection pooling — each query opens a new connection (fine for this scale, would need HikariCP for production use)
+- Database credentials are hardcoded in `ConexionClass.java` (would move to an external config file for production)
+
+## Author
+
+Cristopher Joel Saldaña Peralta — Systems Engineering student, Universidad César Vallejo (Piura, Perú)
